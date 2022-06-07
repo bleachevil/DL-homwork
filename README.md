@@ -16,18 +16,19 @@ df = pd.read_csv('btc_sentiment.csv', index_col="date", infer_datetime_format=Tr
 df = df.drop(columns="fng_classification")
 df.head()
 ```
-pic bitcoin fng value
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/fng_bitcoin.png?raw=true)
+
 ```
 df2 = pd.read_csv('btc_historic.csv', index_col="Date", infer_datetime_format=True, parse_dates=True)['Close']
 df2 = df2.sort_index()
 df2.tail()
 ```
-pic of close bitcoin
+!](https://github.com/bleachevil/DL-homwork/blob/main/pic/close_bitcoin2.png?raw=true)
 ```
 df = df.join(df2, how="inner")
 df.tail()
 ```
-pic join fng and close
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/fng&close_bitcoin.png?raw=true)
 
 ### X and Y 
 ```
@@ -81,7 +82,7 @@ X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 print (f"X_train sample values:\n{X_train[:5]} \n")
 print (f"X_test sample values:\n{X_test[:5]}")
 ```
-pic of X_train sample
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/X_trainsample.png?raw=true)
 
 ## Build and Train the LSTM RNN
 
@@ -118,24 +119,24 @@ model.compile(optimizer="adam", loss="mean_squared_error")
 # Summarize the model
 model.summary()
 ```
-pic of summary
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofsummaryofmodel.png?raw=true)
 
 ### Train the model
 ```
 model.fit(X_train, y_train, epochs=10, shuffle=False, batch_size=1, verbose=1)
 ```
-pic of train model
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/trainoflstmmodel.png?raw=true)
 
 ### model performance
 ```
 model.evaluate(X_test, y_test)
 ```
-pic of evaluate of model performance
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofevalofmodelperformance.png?raw=true)
 
 ```
 predicted = model.predict(X_test)
 ```
-pic of predict model
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/predictedmodelofmodelperformance.png?raw=true)
 
 ### Create a DataFrame of Real and Predicted values
 ```
@@ -145,11 +146,11 @@ stocks = pd.DataFrame({
 }, index = df.index[-len(real_prices): ]) 
 stocks.head()
 ```
-pic of real and predicted values
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofrealandpredictedvalues.png?raw=true)
 ```
 stocks.plot()
 ```
-pic of stocks plots
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofstocksplots.png?raw=true)
 
 ## LSTM Stock Predictor Using Closing Prices
 ### Data Preparation
@@ -168,18 +169,18 @@ df = pd.read_csv('btc_sentiment.csv', index_col="date", infer_datetime_format=Tr
 df = df.drop(columns="fng_classification")
 df.head()
 ```
-pic of fng
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/fng_bitcoin2.png?raw=true)
 ```
 df2 = pd.read_csv('btc_historic.csv', index_col="Date", infer_datetime_format=True, parse_dates=True)['Close']
 df2 = df2.sort_index()
 df2.tail()
 ```
-pic of close
+!](https://github.com/bleachevil/DL-homwork/blob/main/pic/close_bitcoin2.png?raw=true)
 ```
 df = df.join(df2, how="inner")
 df.tail()
 ```
-pic of join
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/fng&close_bitcoin2.png?raw=true)
 
 ### X and Y
 ```
@@ -231,7 +232,7 @@ X_test = X_test.reshape((X_test.shape[0], X_test.shape[1], 1))
 print (f"X_train sample values:\n{X_train[:5]} \n")
 print (f"X_test sample values:\n{X_test[:5]}")
 ```
-pic of reshape
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/X_trainsample2.png?raw=true)
 
 ## Build and Train the LSTM RNN
 ### initial import
@@ -264,7 +265,7 @@ model.add(Dense(1))
 model.compile(optimizer="adam", loss="mean_squared_error")
 model.summary()
 ```
-pic of summary
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofsummaryofmodel2.png?raw=true)
 
 ### Train the model
 ```
@@ -277,12 +278,12 @@ pic of train the model
 ```
 model.evaluate(X_test, y_test)
 ```
-pic of eva the model
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofevalofmodelperformance2.png?raw=true)
 ###  Make some predictions
 ```
 predicted = model.predict(X_test)
 ```
-pic of prediction
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofrealandpredictedvalues2.png?raw=true)
 ###  Recover the original prices instead of the scaled version
 ```
 predicted_prices = scaler.inverse_transform(predicted)
@@ -296,8 +297,9 @@ stocks = pd.DataFrame({
 }, index = df.index[-len(real_prices): ]) 
 stocks.head()
 ```
-pic of stock
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/predictedmodelofmodelperformance2.png?raw=true)
 ```
 stocks.plot()
 ```
-pic of plot
+
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/picofstocksplots2.png?raw=true)
