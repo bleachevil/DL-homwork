@@ -271,7 +271,7 @@ model.summary()
 ```
 model.fit(X_train, y_train, epochs=10, shuffle=False, batch_size=1, verbose=1)
 ```
-pic of train the model
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/trainoflstmmodel2.png?raw=true)
 
 ## Model Performance
 ### Evaluate the model
