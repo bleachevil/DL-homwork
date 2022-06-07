@@ -23,7 +23,7 @@ df2 = pd.read_csv('btc_historic.csv', index_col="Date", infer_datetime_format=Tr
 df2 = df2.sort_index()
 df2.tail()
 ```
-!](https://github.com/bleachevil/DL-homwork/blob/main/pic/close_bitcoin2.png?raw=true)
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/close_bitcoin2.png?raw=true)
 ```
 df = df.join(df2, how="inner")
 df.tail()
@@ -175,7 +175,7 @@ df2 = pd.read_csv('btc_historic.csv', index_col="Date", infer_datetime_format=Tr
 df2 = df2.sort_index()
 df2.tail()
 ```
-!](https://github.com/bleachevil/DL-homwork/blob/main/pic/close_bitcoin2.png?raw=true)
+![](https://github.com/bleachevil/DL-homwork/blob/main/pic/close_bitcoin2.png?raw=true)
 ```
 df = df.join(df2, how="inner")
 df.tail()
